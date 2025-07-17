@@ -4,7 +4,7 @@ Aplikacja Flutter do przeglądania postów z API. Wyświetla listę postów oraz
 
 ## Technologie
 
-- **Flutter** (v3.0+)
+- **Flutter** 3.32.6 (Dart 3.8.1)
 - **Riverpod** (stan management)
 - **Go Router** (nawigacja)
 - **Dio** (HTTP requests)
