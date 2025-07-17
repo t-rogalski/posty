@@ -1,16 +1,46 @@
-# posty
+# Posty - Aplikacja do przeglądania postów
 
-A new Flutter project.
+Aplikacja Flutter do przeglądania postów z API. Wyświetla listę postów oraz szczegóły wybranego postu.
 
-## Getting Started
+## Technologie
 
-This project is a starting point for a Flutter application.
+- **Flutter** (v3.0+)
+- **Riverpod** (stan management)
+- **Go Router** (nawigacja)
+- **Dio** (HTTP requests)
 
-A few resources to get you started if this is your first Flutter project:
+## Struktura projektu
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```plaintext
+lib/
+├── app_router.dart        # Konfiguracja routingu
+├── main.dart              # Główny plik aplikacji
+├── models/
+│   └── post.dart          # Model danych posta
+├── pages/
+│   ├── home_page.dart     # Ekran główny z listą postów
+│   └── postdetail_page.dart # Ekran szczegółów postu
+├── providers/
+│   └── post_provider.dart # Dostawcy danych
+└── utils/
+    └── HeadingText.dart   # Widget tekstu nagłówkowego
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshoty
+
+### Ekran główny
+
+![Ekran główny](screenshots/homepage.png)
+
+### Ekran szczegółów
+
+![Ekran szczegółów](screenshots/detailspage.png)
+
+## Autor
+
+Projekt wykonał Tomasz Rogalski.  
+Wykonano w ramach zadania rekrutacyjnego.
+
+---
+
+Dziękuję za poświęcony czas na zapoznanie się z projektem!
