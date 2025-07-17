@@ -25,7 +25,6 @@ class MyApp extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       routerConfig: router,
       title: 'Flutter Posts App',
-      theme: ThemeData(primarySwatch: Colors.blue),
     );
   }
 }

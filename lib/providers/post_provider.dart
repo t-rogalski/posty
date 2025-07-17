@@ -1,6 +1,9 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:posty/models/post.dart';
+
+final selectedTileColorProvider = StateProvider<Color?>((ref) => null);
 
 final dioProvider = Provider<Dio>((ref) => Dio());
 
