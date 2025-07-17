@@ -12,6 +12,7 @@ class HomePage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text('Posts', style: TextStyle(fontSize: 32)),
         backgroundColor: Colors.blue[300],
       ),
@@ -20,16 +21,39 @@ class HomePage extends ConsumerWidget {
           itemCount: posts.length,
           itemBuilder: (context, index) {
             final post = posts[index];
-            return ListTile(
-              tileColor: index.isEven ? Colors.blue[50] : Colors.white,
-              leading: Text(post.id.toString(), style: TextStyle(fontSize: 20)),
-              trailing: const Icon(Icons.arrow_forward),
-              title: Text(post.title, style: TextStyle(fontSize: 20)),
-              onTap: () => {
-                ref.read(selectedTileColorProvider.notifier).state =
-                    index.isEven ? Colors.blue[50] : Colors.white,
-                context.go('/post/${post.id}'),
-              },
+            return Card(
+              margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              elevation: 2,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: ListTile(
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 12,
+                ),
+                tileColor: index.isEven ? Colors.blue[50] : Colors.white,
+                leading: CircleAvatar(
+                  backgroundColor: Colors.blue[200],
+                  child: Text(
+                    post.id.toString(),
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                title: Text(
+                  post.title,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                onTap: () {
+                  ref.read(selectedTileColorProvider.notifier).state =
+                      index.isEven ? Colors.blue[50] : Colors.white;
+                  context.go('/post/${post.id}');
+                },
+              ),
             );
           },
         ),

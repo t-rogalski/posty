@@ -59,12 +59,15 @@ class PostDetailScreen extends ConsumerWidget {
                       ),
                       const SizedBox(height: 32),
                       //User ID
-                      Text(
-                        'User ID: ${selectedPost.userId}',
-                        style: const TextStyle(
-                          fontSize: 20,
-                          color: Colors.grey,
-                        ),
+                      Row(
+                        children: [
+                          Icon(Icons.person, size: 20, color: Colors.grey),
+                          SizedBox(width: 8),
+                          Text(
+                            'User ID: ${selectedPost.userId}',
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                        ],
                       ),
                     ],
                   ),

@@ -24,7 +24,7 @@ class MyApp extends ConsumerWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: router,
-      title: 'Flutter Posts App',
+      title: 'Posts App',
     );
   }
 }
