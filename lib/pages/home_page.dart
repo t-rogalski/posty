@@ -15,7 +15,10 @@ class HomePage extends ConsumerWidget {
           itemCount: posts.length,
           itemBuilder: (context, index) {
             final post = posts[index];
-            return ListTile(title: Text(post.title), onTap: () => {});
+            return ListTile(
+              title: Text(post.title),
+              onTap: () => context.go('/post/${post.id}'),
+            );
           },
         ),
         loading: () => const Center(child: CircularProgressIndicator()),
