@@ -12,7 +12,7 @@ class HomePage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Posts'),
+        title: const Text('Posts', style: TextStyle(fontSize: 32)),
         backgroundColor: Colors.blue[300],
       ),
       body: postsState.when(
@@ -22,9 +22,9 @@ class HomePage extends ConsumerWidget {
             final post = posts[index];
             return ListTile(
               tileColor: index.isEven ? Colors.blue[50] : Colors.white,
-              leading: Text(post.id.toString(), style: TextStyle(fontSize: 16)),
+              leading: Text(post.id.toString(), style: TextStyle(fontSize: 20)),
               trailing: const Icon(Icons.arrow_forward),
-              title: Text(post.title, style: TextStyle(fontSize: 16)),
+              title: Text(post.title, style: TextStyle(fontSize: 20)),
               onTap: () => {
                 ref.read(selectedTileColorProvider.notifier).state =
                     index.isEven ? Colors.blue[50] : Colors.white,

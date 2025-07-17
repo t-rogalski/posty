@@ -17,8 +17,6 @@ class PostDetailScreen extends ConsumerWidget {
     if (selectedPost == null) {
       return Scaffold(
         appBar: AppBar(
-          centerTitle: true,
-          title: Text('Post $postId'),
           leading: IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: () => context.go('/'),
@@ -32,8 +30,6 @@ class PostDetailScreen extends ConsumerWidget {
     return Scaffold(
       backgroundColor: tileColor,
       appBar: AppBar(
-        centerTitle: true,
-        title: Text('Post $postId'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () => context.go('/'),
@@ -47,38 +43,30 @@ class PostDetailScreen extends ConsumerWidget {
             child: SingleChildScrollView(
               child: ConstrainedBox(
                 constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                child: Center(
-                  child: IntrinsicHeight(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        //Title
-                        HeadingText(text: 'Title:'),
-                        Text(
-                          selectedPost.title,
-                          style: const TextStyle(fontSize: 18),
-                          textAlign: TextAlign.center,
+                child: IntrinsicHeight(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      //Title
+                      HeadingText(text: 'Title: ${selectedPost.title}'),
+                      const SizedBox(height: 16),
+                      //Body
+                      HeadingText(text: 'Body:'),
+                      const SizedBox(height: 8),
+                      Text(
+                        selectedPost.body,
+                        style: const TextStyle(fontSize: 24),
+                      ),
+                      const SizedBox(height: 32),
+                      //User ID
+                      Text(
+                        'User ID: ${selectedPost.userId}',
+                        style: const TextStyle(
+                          fontSize: 20,
+                          color: Colors.grey,
                         ),
-                        const SizedBox(height: 16),
-                        //Body
-                        HeadingText(text: 'Body:'),
-                        Text(
-                          selectedPost.body,
-                          style: const TextStyle(fontSize: 16),
-                          textAlign: TextAlign.center,
-                        ),
-                        const SizedBox(height: 64),
-                        //User ID
-                        Text(
-                          'User ID: ${selectedPost.userId}',
-                          style: const TextStyle(
-                            fontSize: 16,
-                            color: Colors.grey,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
